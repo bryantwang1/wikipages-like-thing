@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Wikipages.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Wikipages.Controllers
 {
@@ -14,7 +15,7 @@ namespace Wikipages.Controllers
         private WikipagesDBContext db = new WikipagesDBContext();
         public IActionResult Index()
         {
-            return View(db.Businesses.ToList());
+            return View(db.Businesses.Include(businesses => businesses.Category).ToList());
         }
 
         public IActionResult Details(int id)
@@ -25,6 +26,7 @@ namespace Wikipages.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Description");
             return View();
         }
         [HttpPost]
@@ -38,6 +40,7 @@ namespace Wikipages.Controllers
         public IActionResult Edit(int id)
         {
             var thisBusiness = db.Businesses.FirstOrDefault(businesses => businesses.BusinessId == id);
+            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Description");
             return View(thisBusiness);
         }
         [HttpPost]

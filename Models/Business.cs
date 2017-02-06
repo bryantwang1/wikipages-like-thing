@@ -20,6 +20,8 @@ namespace Wikipages.Models
         public string BusinessState { get; set; }
         public string BusinessZip { get; set; }
         public int CategoryId { get; set; } 
+
+        public virtual Category Category { get; set; }
     }
 
 }

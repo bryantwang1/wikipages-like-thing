@@ -7,11 +7,12 @@
 <body>
     <h2>Details</h2>
     <hr />
+    <strong>Category:</strong> @Html.DisplayFor(model => model.CategoryId) <hr />
     <strong>Description:</strong> @Html.DisplayFor(model => model.BusinessDescription) <hr />
     <strong>Phone:</strong> @Html.DisplayFor(model => model.BusinessPhone) <br />
     <strong>Address:</strong> <br />
         @Html.DisplayFor(model => model.BusinessStreet) <br />
         @Html.DisplayFor(model => model.BusinessCity), @Html.DisplayFor(model => model.BusinessState) @Html.DisplayFor(model => model.BusinessZip) <br />
-    <p>@Html.ActionLink("Back to list", "Index")</p>
+    <p>@Html.ActionLink("Edit", "Edit", new { id = Model.BusinessId }) | @Html.ActionLink("Back to List", "Index")</p>
 </body>
 </html>

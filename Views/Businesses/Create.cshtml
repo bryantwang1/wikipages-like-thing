@@ -26,11 +26,13 @@
         <label>Zip</label>
         @Html.TextBoxFor(model => model.BusinessZip)
 
+        @Html.LabelFor(model => model.CategoryId)
+        @Html.DropDownList("CategoryId")
 
         <br /><h3>Contact Info</h3>
         <label>Phone</label>
         @Html.TextBoxFor(model => model.BusinessPhone)<br />
-        <input type="submit" value="Add new task" />
+        <input type="submit" value="Add new business" />
     }
     <p>@Html.ActionLink("Back to list", "Index")</p>
 </body>

@@ -27,6 +27,8 @@
         <label>Zip</label>
         @Html.EditorFor(model => model.BusinessZip)
 
+        @Html.LabelFor(model => model.CategoryId)
+        @Html.DropDownList("CategoryId")
 
         <br /><h3>Contact Info</h3>
         <label>Phone</label>

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Wikipages.Models.Business>
+
+<html>
+<head>
+    <title>Wikipages - Category Details</title>
+</head>
+<body>
+    <h2>@ViewBag.CategoryDescription</h2>
+    <hr />
+    @foreach (var business in Model)
+    {
+        <h4>@business.BusinessName</h4>
+    }
+
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>

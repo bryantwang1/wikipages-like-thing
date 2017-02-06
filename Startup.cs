@@ -41,6 +41,9 @@ namespace Wikipages
 
         public void Configure(IApplicationBuilder app)
         {
+
+            app.UseDeveloperExceptionPage();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -48,7 +51,6 @@ namespace Wikipages
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            app.UseDeveloperExceptionPage();
 
             app.Run(async (context) =>
             {

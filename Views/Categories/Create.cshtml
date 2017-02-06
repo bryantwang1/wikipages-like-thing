@@ -1,0 +1,20 @@
+﻿@model Wikipages.Models.Category
+
+<html>
+<head>
+    <title>Create a New Category</title>
+</head>
+<body>
+    <h2>Add a new business</h2>
+    <hr />
+    <h3>Category Information</h3>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.Description)
+        @Html.TextBoxFor(model => model.Description)<br />
+        <input type="submit" value="Add new category" />
+    }
+
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>

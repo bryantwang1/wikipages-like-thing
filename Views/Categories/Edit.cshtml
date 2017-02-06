@@ -1,0 +1,22 @@
+﻿@model Wikipages.Models.Category
+
+<html>
+<head>
+    <title>Edit Category</title>
+</head>
+<body>
+    <h2>Edit @Html.LabelFor(model => model.Description)</h2>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.LabelFor(model => model.Description)
+        @Html.EditorFor(model => model.Description)<br />
+
+
+        <input type="submit" value="Save" />
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>
