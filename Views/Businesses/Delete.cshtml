@@ -1,0 +1,23 @@
+﻿@model Wikipages.Models.Business
+
+<html>
+<head>
+    <title>Business - Delete</title>
+</head>
+<body>
+
+    <h2>
+        Are you sure you want to delete this?
+    </h2>
+
+    <hr />
+    @Html.DisplayNameFor(model => model.BusinessName) : @Html.DisplayFor(model => model.BusinessName)
+
+
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Delete" />
+    }
+    @Html.ActionLink("Back to Home", "Index");
+</body>
+</html>

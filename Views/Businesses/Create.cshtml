@@ -1,0 +1,37 @@
+﻿@model Wikipages.Models.Business
+
+<html>
+<head>
+    <title>Create a New Business</title>
+</head>
+<body>
+    <h2>Add a new business</h2>
+    <hr />
+    <h3>Business Information</h3>
+    @using (Html.BeginForm())
+    {
+        <label>Name</label><br />
+        @Html.TextBoxFor(model => model.BusinessName)<br />
+
+        <label>Description</label><br />
+        @Html.TextAreaFor(model => model.BusinessDescription)<br />
+
+        <br /><h3>Address Information:</h3>
+        <label>Street</label>
+        @Html.TextBoxFor(model => model.BusinessStreet)
+        <label>City</label>
+         @Html.TextBoxFor(model => model.BusinessCity)
+        <label> State </label>
+        @Html.TextBoxFor(model => model.BusinessName)
+        <label>Zip</label>
+        @Html.TextBoxFor(model => model.BusinessZip)
+
+
+        <br /><h3>Contact Info</h3>
+        <label>Phone</label>
+        @Html.TextBoxFor(model => model.BusinessPhone)<br />
+        <input type="submit" value="Add new task" />
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>

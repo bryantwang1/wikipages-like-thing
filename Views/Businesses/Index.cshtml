@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Wikipages.Models.Business>
+
+<html>
+<head>
+    <title>Wikipages</title>
+</head>
+<body>
+    <h2>Businesses</h2>
+    <ul>
+        @foreach (var business in Model)
+        {
+            <li><strong>@Html.DisplayFor(modelBusiness => business.BusinessName)</strong> | @Html.ActionLink("Details", "Details", new { id = business.BusinessId }) | @Html.ActionLink("Edit", "Edit", new { id = business.BusinessId }) | @Html.ActionLink("Delete", "Delete", new { id = business.BusinessId })</li>
+        }
+    </ul>
+
+    <p>@Html.ActionLink("Add new business", "Create")</p>
+</body>
+</html>

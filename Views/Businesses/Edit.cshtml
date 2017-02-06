@@ -1,0 +1,39 @@
+﻿@model Wikipages.Models.Business
+
+<html>
+<head>
+    <title>Edit Business</title>
+</head>
+<body>
+    <h2>Edit @Html.LabelFor(model => model.BusinessName)</h2>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.BusinessId)
+
+        <label>Name</label><br />
+        @Html.EditorFor(model => model.BusinessName)<br />
+
+        <label>Description</label><br />
+        @Html.EditorFor(model => model.BusinessDescription)<br />
+
+        <br /><h3>Address Information:</h3>
+        <label>Street</label>
+        @Html.EditorFor(model => model.BusinessStreet)
+        <label>City</label>
+        @Html.EditorFor(model => model.BusinessCity)
+        <label> State </label>
+        @Html.EditorFor(model => model.BusinessName)
+        <label>Zip</label>
+        @Html.EditorFor(model => model.BusinessZip)
+
+
+        <br /><h3>Contact Info</h3>
+        <label>Phone</label>
+        @Html.EditorFor(model => model.BusinessPhone)<br />
+
+        <input type="submit" value="Save" />
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>
